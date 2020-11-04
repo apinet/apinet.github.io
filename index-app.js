@@ -1517,8 +1517,10 @@ class LitLine extends HTMLElement {
     static get observedAttributes() {
         return []; // TODO: customize layout.
     }
-    attributeChangedCallback(name, oldValue, value) {
-    }
+    /*   attributeChangedCallback(name: string, oldValue: string, value: string) {
+        
+      }
+     */
     get data() {
         return this.series;
     }
