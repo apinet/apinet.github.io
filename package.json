@@ -31,8 +31,9 @@
   "types": "dist/lit-line.d.ts",
   "scripts": {
     "clean": "rm -fr dist",
-    "dev": "esbuild --bundle src/index-app.ts --outfile=index-app.js --external:node_modules --servedir=.",
-    "build": "esbuild --bundle src/index-app.ts --outfile=index-app.js --platform=node --bundle --minify"
+    "serve:dev": "esbuild --bundle src/index-app.ts --outfile=index-app.js --external:node_modules --servedir=.",
+    "build": "esbuild --bundle src/index-app.ts --outfile=index-app.js --bundle --minify",
+    "serve:build": "esbuild --bundle src/index-app.ts --outfile=index-app.js --bundle --minify --servedir=."
   },
   "dependencies": {
     "lit": "^2.2.1",
