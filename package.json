@@ -22,13 +22,6 @@
   "bugs": {
     "url": "https://github.com/adrienpinet/lit-line/issues"
   },
-  "files": [
-    "dist/lit-line.js",
-    "dist/lit-line.js.map",
-    "dist/lit-line.d.ts"
-  ],
-  "main": "dist/lit-line.js",
-  "types": "dist/lit-line.d.ts",
   "scripts": {
     "clean": "rm -fr dist",
     "serve:dev": "esbuild --bundle src/index-app.ts --outfile=index-app.js --external:node_modules --servedir=.",
@@ -37,7 +30,7 @@
   },
   "dependencies": {
     "lit": "^2.2.1",
-    "lit-line": "^0.2.4"
+    "lit-line": "^0.2.8"
   },
   "devDependencies": {
     "esbuild": "^0.14.27",
