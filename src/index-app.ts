@@ -1,6 +1,7 @@
-import { html, render } from "lit";
-import { styleMap } from "lit/directives/style-map.js";
+import { html, render } from "lit-html";
+import { styleMap } from "lit-html/directives/style-map.js";
 import { kissWinkHeart, githubIcon } from "./index-icons";
+
 import { Serie } from "lit-line";
 import "lit-line";
 
@@ -39,8 +40,8 @@ export class IndexApp extends HTMLElement {
         break;
       case View.MultiLines:
         this.data = [
-          { color: "#68BB79", points: this.createSinusoid(300, 0) },
-          { color: "#9A57E8", points: this.createSinusoid(300, Math.PI) },
+          { color: "#68bb79", points: this.createSinusoid(300, 0) },
+          { color: "#9a57e8", points: this.createSinusoid(300, Math.PI) },
         ];
         break;
     }
@@ -204,7 +205,9 @@ export class IndexApp extends HTMLElement {
               display: flex;
               flex-flow: row;
               justify-content: center;
+              align-items: center;
               font-size: 1em;
+              min-height: 3em;
               padding: 1em 0;
               margin-top: 2em 0 1em 0;
             }
