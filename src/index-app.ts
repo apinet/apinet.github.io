@@ -88,8 +88,8 @@ export class IndexApp extends HTMLElement {
       render(
         html`
           <header>
-            <span class="header__logo">&lt;lit-line/&gt;</span>
-            <a class="header__github" href="https://github.com/apinet/lit-line"
+            <span class="logo">&lt;lit-line/&gt;</span>
+            <a class="github" href="https://github.com/apinet/lit-line"
               >${githubIcon}</a
             >
           </header>
@@ -104,14 +104,14 @@ export class IndexApp extends HTMLElement {
               ${this.selection === null
                 ? html`
                     <button
-                      class="nav__item"
+                      class="item"
                       ?selected=${this.selectedView === View.HighDensity}
                       @click=${() => this.selectView(View.HighDensity)}
                     >
                       Random data
                     </button>
                     <button
-                      class="nav__item"
+                      class="item"
                       ?selected=${this.selectedView === View.MultiLines}
                       @click=${() => this.selectView(View.MultiLines)}
                     >
@@ -119,16 +119,16 @@ export class IndexApp extends HTMLElement {
                     </button>
                   `
                 : html`
-                    <span class="nav__item">
+                    <span class="item">
                       index:
-                      <span class="nav__item__time"
+                      <span class="time"
                         >${Math.round(this.selection.time)}</span
                       >
                       | values:
                       ${this.selection.values.map(
                         (value, i) =>
                           html`<span
-                            class="nav__item__value"
+                            class="value"
                             style=${styleMap({ color: this.data[i].color })}
                             >${value ? Math.round(value) : "--"}</span
                           >`
@@ -186,12 +186,16 @@ export class IndexApp extends HTMLElement {
               font-size: 1.4em;
             }
 
-            .header__logo {
+            header > .logo {
               font-weight: 600;
             }
 
-            .header__github:hover {
-              color: #668;
+            header > .github {
+              color: #445;
+            }
+
+            header > .github:hover {
+              color: #112;
             }
 
             h1 {
@@ -212,28 +216,32 @@ export class IndexApp extends HTMLElement {
               margin-top: 2em 0 1em 0;
             }
 
-            .nav__item {
+            .nav > .item {
               background-color: transparent;
               border: 2px solid transparent;
               padding: 0.5em;
               font-size: 1em;
             }
 
-            .nav__item__time,
-            .nav__item__value {
+            .nav > .item > .time,
+            .nav > .item > .value {
               padding: 0.2em 0.4em;
               border-radius: 0.2em;
               font-weight: 600;
             }
 
-            .nav__item__value {
+            .nav > .item > .value {
               color: white;
               margin: 0 0.2em;
             }
 
-            .nav__item[selected] {
+            .nav > .item[selected] {
               border-color: black;
               font-weight: 600;
+            }
+
+            .nav > .item:not([selected]) {
+              cursor: pointer;
             }
 
             lit-line {
