@@ -29,8 +29,8 @@
     "serve:build": "esbuild --bundle src/index-app.ts --outfile=index-app.js --bundle --minify --servedir=."
   },
   "dependencies": {
-    "lit-html": "^2.7.0",
-    "lit-line": "^0.2.10"
+    "lit-html": "^3.1.2",
+    "lit-line": "^0.2.11"
   },
   "devDependencies": {
     "esbuild": "^0.17.14"
