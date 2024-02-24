@@ -89,14 +89,12 @@ export class IndexApp extends HTMLElement {
         html`
           <header>
             <span class="logo">&lt;lit-line/&gt;</span>
-            <a class="github" href="https://github.com/apinet/lit-line"
-              >${githubIcon}</a
-            >
+            <a class="github" href="https://github.com/apinet/lit-line">${githubIcon}</a>
           </header>
 
           <h1>
-            <strong>{small, fast, responsive, interactive}</strong> svg line
-            chart web component for <strong>modern website</strong>. That's it.
+            <strong>{small, fast, responsive, interactive}</strong> svg line chart web component for
+            <strong>modern website</strong>. That's it.
           </h1>
 
           <main>
@@ -121,15 +119,11 @@ export class IndexApp extends HTMLElement {
                 : html`
                     <span class="item">
                       index:
-                      <span class="time"
-                        >${Math.round(this.selection.time)}</span
-                      >
+                      <span class="time">${Math.round(this.selection.time)}</span>
                       | values:
                       ${this.selection.values.map(
                         (value, i) =>
-                          html`<span
-                            class="value"
-                            style=${styleMap({ color: this.data[i].color })}
+                          html`<span class="value" style=${styleMap({ color: this.data[i].color })}
                             >${value ? Math.round(value) : "--"}</span
                           >`
                       )}
@@ -138,7 +132,7 @@ export class IndexApp extends HTMLElement {
             </nav>
 
             <lit-line
-              @lit-line:selected=${(e: CustomEvent) => this.onSelection(e)}
+              @ll:selected=${(e: CustomEvent) => this.onSelection(e)}
               .data=${this.data}
             ></lit-line>
           </main>
