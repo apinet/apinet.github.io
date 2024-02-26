@@ -132,7 +132,7 @@ export class IndexApp extends HTMLElement {
             </nav>
 
             <lit-line
-              @ll:selected=${(e: CustomEvent) => this.onSelection(e)}
+              @lit-line:selected=${(e: CustomEvent) => this.onSelection(e)}
               .data=${this.data}
             ></lit-line>
           </main>
